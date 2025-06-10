@@ -5,6 +5,10 @@ const cors = require('cors');
 const userRoutes = require('./routes/userRoutes'); 
 const activityRoutes = require('./routes/activityRoutes'); 
 const StadeRoutes = require('./routes/stadeRoutes'); 
+const path = require('path');
+
+
+app.use('/storage', express.static(path.join(__dirname, 'public/uploads')));// Serve static files for stades
 
 // Allow requests from localhost:8080 (your frontend)
 app.use(cors({

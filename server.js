@@ -12,7 +12,8 @@ app.use('/storage', express.static(path.join(__dirname, 'public/uploads')));// S
 
 // Allow requests from localhost:8080 (your frontend)
 app.use(cors({
-  origin: 'http://localhost:8081', // or '*' to allow all
+  //origin 8081 or 8080
+  origin: ['http://localhost:8081', 'http://localhost:8080'], // or '*' to allow all
   credentials: true
 }));
 app.use('/public', express.static('public')); // Serve static files from the 'public' directory
